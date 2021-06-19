@@ -1,17 +1,10 @@
-# Assignment description
 
 # Phone Book
 
-Write a .Net Web application to manage the business cards information in phone book access database, having the following requirements:
+Business Card Management a .Net MVC Web application to manage the business cards information in phone book 
 
-1. Business card information includes:
-  * Name.
-  * Gender.
-  * Date of birth.
-  * Email.
-  * Phone.
-  * Photo - optional field (Max size is 1MB) .
-  * Address.
+1. Demo:
+  I have uploaded the website at the following link <a href="jbawards2019.com">DEMO link </a>
   
 2. The first page shall enable the user to add new business cards
   * Business card information can be add in four ways:
