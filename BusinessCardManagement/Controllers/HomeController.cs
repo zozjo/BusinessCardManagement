@@ -42,7 +42,7 @@ namespace BusinessCardManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult ReaderQrCode(string base64String) {
+        public JsonResult ReaderQrCode(string base64String) {
             var reader = new BarcodeReader();
             Bitmap bmpReturn = null;
 
@@ -94,10 +94,10 @@ namespace BusinessCardManagement.Controllers
         [HttpPost]
         public ActionResult ReadXML(HttpPostedFileBase postedFile)
         {
-            List<BusinessCardXML> customers = new List<BusinessCardXML>();
+            List<BusinessCard> customers = new List<BusinessCard>();
             string filePath = string.Empty;
             XmlDocument doc = new XmlDocument();
-            BusinessCardXML businessCardXML = new BusinessCardXML();
+            BusinessCard businessCardXML = new BusinessCard();
             if (postedFile != null)
             {
                 string path = Server.MapPath("~/Uploads/");
@@ -134,13 +134,11 @@ namespace BusinessCardManagement.Controllers
             return Json(businessCardXML, JsonRequestBehavior.AllowGet);
 
         }
-        public ActionResult ReadCSV() {
-            return View();
-        }
+
         [HttpPost]
         public JsonResult ReadCSV(HttpPostedFileBase postedFile)
         {
-            List<BusinessCardXML> customers = new List<BusinessCardXML>();
+            List<BusinessCard> customers = new List<BusinessCard>();
             string filePath = string.Empty;
             if (postedFile != null)
             {
@@ -162,7 +160,7 @@ namespace BusinessCardManagement.Controllers
                 {
                     if (!string.IsNullOrEmpty(row))
                     {
-                        customers.Add(new BusinessCardXML
+                        customers.Add(new BusinessCard
                         {
                             Name = row.Split(',')[0],
                             Gender = row.Split(',')[1],
@@ -179,6 +177,7 @@ namespace BusinessCardManagement.Controllers
 
             return Json(customers, JsonRequestBehavior.AllowGet) ;
         }
+     
 
         [HttpPost]
         public JsonResult InsertBusinessCard(string Name, string Gender, string DateOfBirth, string Email, string Phone, string Photo, string Address) {
@@ -201,11 +200,7 @@ namespace BusinessCardManagement.Controllers
             return Json("Done");
 
         } 
-        [HttpPost]
-        public ActionResult SginUp(string email,string password,string username ) {
 
-            return Json("1");
-        }
         [HttpPost]
         public JsonResult GetBusinessCard()
         {
@@ -226,8 +221,8 @@ namespace BusinessCardManagement.Controllers
             List<BusinessCard> businessCards = new List<BusinessCard>();
             businessCards = (from obj in myDB.businessCards
                              
-                             where obj.UserID == userId && obj.Name.Contains(Filter) || obj.Phone.Contains(Filter) || 
-                             obj.Gender.Contains(Filter) || obj.DateOfBirth.Contains(Filter) || obj.Email.Contains(Filter)
+                             where obj.UserID == userId && (obj.Name.Contains(Filter) || obj.Phone.Contains(Filter) || 
+                             obj.Gender.Contains(Filter) || obj.DateOfBirth.Contains(Filter) || obj.Email.Contains(Filter))
                              select obj).ToList();
             return Json(businessCards, JsonRequestBehavior.AllowGet);
         }
