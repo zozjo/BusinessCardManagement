@@ -5,14 +5,17 @@
 }
 
 .login-logo {
-    width: 73px;
+    width: 100px;
 }
 
 #main {
     display: -webkit-flex; /* Safari */
     display: flex;
 }
-
+.p-4 {
+    padding: 6px;
+    /* height: 37px; */
+}
 div#item1 {
     -webkit-order: 1;
 }

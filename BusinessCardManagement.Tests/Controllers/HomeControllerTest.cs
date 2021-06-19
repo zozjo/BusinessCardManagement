@@ -13,6 +13,9 @@ using System.Web.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web;
+using System.Web.Security;
+using Moq;
+using System.Security.Principal;
 
 namespace BusinessCardManagement.Tests.Controllers
 {
@@ -63,7 +66,47 @@ namespace BusinessCardManagement.Tests.Controllers
 
 
         }
+        [TestMethod]
         
+        public void InsertBusinessCard()
+        {
+            // Arrange 
+
+            HomeController controller = new HomeController();
+
+
+
+            var fakeHttpContext = new Mock<HttpContextBase>();
+            var fakeIdentity = new GenericIdentity("1");
+            var principal = new GenericPrincipal(fakeIdentity, null);
+
+            fakeHttpContext.Setup(t => t.User).Returns(principal);
+            var controllerContext = new Mock<ControllerContext>();
+            controllerContext.Setup(t => t.HttpContext).Returns(fakeHttpContext.Object);
+
+
+            //Set your controller ControllerContext with fake context
+            controller.ControllerContext = controllerContext.Object;
+
+
+
+            // Act
+
+
+            string Name = "test";
+            string Gender = "test";
+            string DateOfBirth = "test";
+            string Email = "test";
+            string Phone = "test";
+            string Photo = "test";
+            string Address = "test";
+            var result = controller.InsertBusinessCard(Name, Gender, DateOfBirth,Email, Phone, Photo, Address);
+
+            // Assert
+            Assert.AreEqual("Done", result);
+        }
 
     }
+ 
+
 }

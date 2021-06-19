@@ -13,7 +13,6 @@ namespace BusinessCardManagement.Controllers
     public class UserController : Controller
     {
         // GET: User
-        DBContext myDB = new DBContext();
         public ActionResult Index() {
             if (HttpContext.User.Identity.IsAuthenticated)
                 return RedirectToAction("Index", "Home");
@@ -22,7 +21,7 @@ namespace BusinessCardManagement.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-
+            DBContext myDB = new DBContext();
             var result = new Dictionary<string, string>();
             string passwordHash = Crypto.Hash(password, "MD5");
             User user = new User();
@@ -53,6 +52,7 @@ namespace BusinessCardManagement.Controllers
         [HttpPost]
         public ActionResult SginUp(string email, string password, string username)
         {
+            DBContext myDB = new DBContext();
             var result = new Dictionary<string, string>();
             User userCheck = CheckEmail(email);
             if (userCheck== null) {
@@ -78,6 +78,7 @@ namespace BusinessCardManagement.Controllers
         }
         public User CheckEmail(string email)
         {
+            DBContext myDB = new DBContext();
             User user = new User();
             user = (from users in myDB.users
                     where users.Email == email 
@@ -87,4 +88,5 @@ namespace BusinessCardManagement.Controllers
         }
 
     }
+   
 }

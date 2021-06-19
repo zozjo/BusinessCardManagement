@@ -182,17 +182,14 @@ namespace BusinessCardManagement.Controllers
             BusinessCard businessCard = new BusinessCard();
             DBContext myDB = new DBContext();
             int userId = int.Parse(HttpContext.User.Identity.Name);
-
             businessCard.UserID = userId;
             businessCard.Name = Name;
-
             businessCard.Gender = Gender;
             businessCard.DateOfBirth = DateOfBirth;
             businessCard.Email = Email;
             businessCard.Phone = Phone;
             businessCard.Photo = Photo;
             businessCard.Address = Address;
-
             myDB.businessCards.Add(businessCard);
             myDB.SaveChanges();
             return Json("Done");

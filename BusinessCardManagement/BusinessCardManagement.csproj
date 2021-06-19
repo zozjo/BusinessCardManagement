@@ -182,10 +182,8 @@
       <DependentUpon>202106151032371_init-update-date.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\BusinessCardXML.cs" />
     <Compile Include="Models\BusinessCard.cs" />
     <Compile Include="Models\DBContext.cs" />
-    <Compile Include="Models\FileUploadViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
