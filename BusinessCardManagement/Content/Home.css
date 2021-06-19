@@ -1,0 +1,78 @@
+﻿body, html {
+    height: 100% !important;
+    overflow-x: hidden;
+}
+.main-background {
+    background: linear-gradient( rgb(255 255 255 / 43%) 100%, rgb(255 251 251 / 96%)100%),url(Images/login.jpg); height: 100% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color:white;
+}
+.centerText {
+    text-align: center;
+}
+.ContanerButton {
+    background-color: black;
+    padding: 20px 0px;
+    border-radius: 7px;
+    font-size: 28px;
+}
+.logout {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+
+}
+.logoutText {
+    border-radius: 5px;
+    background-color: black;
+    padding: 15px 10px;
+    color: white;
+    font-size: 20px;
+    width: fit-content;
+    float: right;
+}
+    .logoutText a, ContanerButton a {
+        color: white;
+    }
+    .logoutText a:hover, ContanerButton a:hover {
+        text-decoration: unset;
+        color: white;
+    }
+a {
+    color: white;
+    text-decoration: unset;
+}
+a:hover, a:focus {
+    color: white;
+    text-decoration: unset;
+}
+.iconBox {
+    width: fit-content;
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+.d-flex {
+    display: flex;
+}
+@media only screen and (max-width: 720px) {
+    .centerDiv {
+        display: grid;
+    }
+
+    .ContanerButton {
+        padding: 20px 17px;
+    }
+}

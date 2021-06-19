@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<BusinessCardXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>test3</Name>
+  <Gender>Male</Gender>
+  <DateOfBirth>Jan  1 1900 12:00AM</DateOfBirth>
+  <Email>sa@as.com</Email>
+  <Phone>0782789444</Phone>
+  <Photo />
+  <Address>amman</Address>
+</BusinessCardXML>

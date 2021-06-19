@@ -1,0 +1,60 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+.font-family-karla {
+    font-family: karla;
+}
+
+.login-logo {
+    width: 73px;
+}
+
+#main {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+
+div#item1 {
+    -webkit-order: 1;
+}
+
+div#item2 {
+    -webkit-order: 2;
+}
+
+/* Standard syntax */
+div#item1 {
+    order: 1;
+}
+
+div#item2 {
+    order: 2;
+}
+
+@media screen and (max-width: 750px) {
+    div#item1 {
+        -webkit-order: 2;
+    }
+
+    div#item2 {
+        -webkit-order: 1;
+    }
+
+    /* Standard syntax */
+    div#item1 {
+        order: 2;
+        background-color: #ffffffa3;
+        height: 100vh;
+    }
+
+    .w-1\/2 {
+        width: 100%;
+    }
+
+    div#item2 {
+        order: 1;
+    }
+
+    .shadow-2xl {
+        height: 0vh;
+    }
+}

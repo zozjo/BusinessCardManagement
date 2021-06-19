@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Business Card";
+}
+<link href="~/Content/Card.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Home.css" rel="stylesheet" />
+<script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js" integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD" crossorigin="anonymous"></script>
+<div class="d-flex">
+    <div class="centerText ">
+        <div class="iconBox">
+            <a href="~/Home/Index"><i class="fas fa-long-arrow-alt-left m-7"></i></a>
+        </div>
+    </div>
+   
+</div>
+
+<div class="col-lg-2 col-sm-2 centerText logout">
+    <div class="logoutText">
+        <a href="~/Home/Logout"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+</div>
+<div class="row m-t-20">
+
+    <div class="centerText col-md-12 ">
+        <div class="searchDiv">
+            <input type="text" id="Search" placeholder="Search..">
+            <i class="fas fa-search m-7 searchDivi" id="SearchIcons"></i>
+        </div>
+    </div>
+
+</div>
+<div class="row m-t-20" id="cards">
+
+    
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="~/Content/Cards.js"></script>

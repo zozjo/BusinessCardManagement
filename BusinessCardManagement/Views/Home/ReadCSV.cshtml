@@ -1,0 +1,89 @@
+﻿
+<link href="~/Content/Card.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Home.css" rel="stylesheet" />
+
+<div class="InputMainDiv">
+    <br />
+    <h2>Business card</h2>
+    <div class="col-md-12">
+        <img width="300" src="~/Content/Images/undraw_Upload_re_pasx-removebg-preview.png" />
+    </div>
+    <h3>Add new business card, uplode Your CSV XML or QR code</h3>
+    <input type="file" style="margin: auto;" id="file" name="postedFile" accept=" .csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+    <div id="submitFile" class="Uplode">Uplode</div>
+    <div class="col-md-12 d-flex">
+        <div data-toggle="modal" data-target="#exampleModal" class="Uplode">Add Through UI</div>
+        <div  class="Uplode"><a href="~/Home/BusinessCard">View all business card</a></div>
+    </div>
+ 
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <img class="userImage" src="~/Content/Images/user.png" />
+                </div>
+                <div class="col-md-12">
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Name
+                        <input type="text" name="name" value="" />
+                    </label>
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Gender
+                        <input type="text" name="name" value="" />
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Date of birth
+                        <input type="text" name="name" value="" />
+                    </label>
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Email
+                        <input type="text" name="name" value="" />
+                    </label>
+                </div>
+                <div class="col-md-12 m-b-30">
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Phone
+                        <input type="text" name="name" value="" />
+                    </label>
+                    <label class="col-md-6 col-sm-12 d-grid">
+                        Address
+                        <input type="text" name="name" value="" />
+                    </label>
+                </div>
+
+            </div>  
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/Content/AllCards.js"></script>
+<script type="text/javascript" language="javascript">
+    function checkfile(sender) {
+        var validExts = new Array(".xlsx", ".xls", ".csv");
+        var fileExt = sender.value;
+        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+        if (validExts.indexOf(fileExt) < 0) {
+            alert("Invalid file selected, valid files are of " +
+                validExts.toString() + " types.");
+            return false;
+        }
+        else return true;
+    }
+</script>
+
+

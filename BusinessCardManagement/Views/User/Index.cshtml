@@ -1,0 +1,51 @@
+﻿@{
+
+    ViewBag.Title = "BusinessCard | Login";
+}
+<link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+<link href="~/Content/Login.css" rel="stylesheet" />
+
+<div id="main" class="w-full flex flex-wrap">
+
+    <!-- Login Section -->
+    <div id="item1" class="w-full md:w-1/2 flex flex-col">
+
+        <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
+            <a href="#" class="bg-black text-white font-bold text-xl p-4">
+                <img class="login-logo" src="~/Content/Images/abc-logo.png" />
+            </a>
+        </div>
+
+        <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+            <p class="text-center text-3xl">Login</p>
+            <div class="flex flex-col pt-3 md:pt-8" onsubmit="event.preventDefault();">
+                <div class="flex flex-col pt-4">
+                    <label for="email" class="text-lg">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+
+                <div class="flex flex-col pt-4">
+                    <label for="password" class="text-lg">Password</label>
+                    <input type="password" id="password" placeholder="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+
+                <input type="button" id="LogIn" value="Log In" class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">
+            </div>
+            <div class="text-center pt-12 ">
+                <p> <a href="Forget.php" class="underline font-semibold">Forget Password?</a></p>
+            </div>
+            <div class="text-center pt-12 pb-12">
+                <p>Don't have an account? <a href="register.php" class="underline font-semibold">Register here.</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Image Section -->
+    <div id="item2" class="w-1/2 shadow-2xl">
+        <img class="object-cover w-full h-screen  md:block" src="~/Content/Images/login.jpg" />
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.13.0/sweetalert2.all.js" integrity="sha512-xyQB/ddHP6Oc0QtRFlyVsnBAOJhlxhLin3LXIjw3Ho9RnjppbCJOeb0OUXQ5HgIijMnzNxuCElb5FLkZLN+SSg==" crossorigin="anonymous"></script>
+<script src="~/Content/Login.js"></script>
